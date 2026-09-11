@@ -31,8 +31,19 @@ module d_ff_gate (
 
     not #1 g0 (clk_n, CLK);
 
-    d_latch_gate master (.D(D),  .C(clk_n), .Q(qm), .QN(qmn));
-    d_latch_gate slave  (.D(qm), .C(CLK),   .Q(Q),  .QN(QN));
+    d_latch_gate master (
+        .D(D),  
+        .C(clk_n), 
+        .Q(qm), 
+        .QN(qmn)
+    );
+    
+    d_latch_gate slave  (
+        .D(qm), 
+        .C(CLK), 
+        .Q(Q),  
+        .QN(QN)
+    );
 
 endmodule
 
