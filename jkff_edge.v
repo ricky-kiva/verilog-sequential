@@ -34,11 +34,16 @@ module jkff_edge_gate (
     wire d;                 // D = J Q' + K' Q
 
     not #1 g0 (k_n, K);
-    and #1 g1 (a1, J  , QN);
-    and #1 g2 (a2, k_n, Q );
+    and #1 g1 (a1, J, QN);
+    and #1 g2 (a2, k_n, Q);
     or #1  g3 (d , a1 , a2);
 
-    d_ff_gate u_dff (.D(d), .CLK(CLK), .Q(Q), .QN(QN));
+    d_ff_gate u_dff (
+        .D(d), 
+        .CLK(CLK), 
+        .Q(Q), 
+        .QN(QN)
+    );
 
 endmodule
 
