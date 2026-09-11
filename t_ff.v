@@ -22,7 +22,12 @@ module t_ff_gate (
     output wire QN
 );
 
-    d_ff_gate u_dff (.D(QN), .CLK(CLK), .Q(Q), .QN(QN));
+    d_ff_gate u_dff (
+        .D(QN), 
+        .CLK(CLK), 
+        .Q(Q), 
+        .QN(QN)
+        );
 
 endmodule
 
@@ -36,7 +41,13 @@ module t_ff_from_jk_gate (
     output wire QN
 );
 
-    jkff_edge_gate u_jk (.J(1'b1), .K(1'b1), .CLK(CLK), .Q(Q), .QN(QN));
+    jkff_edge_gate u_jk (
+        .J(1'b1), 
+        .K(1'b1), 
+        .CLK(CLK), 
+        .Q(Q), 
+        .QN(QN)
+    );
 
 endmodule
 
