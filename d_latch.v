@@ -28,8 +28,8 @@ module d_latch_gate (
     wire d_n;           // complement of D
     wire s_n, r_n;      // active-low set / reset for the internal NAND latch
 
-    not #1  g0 (d_n, D);
-    nand #1 g1 (s_n, D  , C);
+    not #1  g0 (d_n, D); // operator, delay, id name, (output, input)
+    nand #1 g1 (s_n, D, C); // operator, delay, id name, (output, input_1, input_2)
     nand #1 g2 (r_n, d_n, C);
 
     nand #1 g3 (Q , s_n, QN);
